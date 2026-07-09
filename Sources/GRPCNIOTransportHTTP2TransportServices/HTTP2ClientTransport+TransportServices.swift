@@ -67,6 +67,11 @@ extension HTTP2ClientTransport {
       self.channel.retryThrottle
     }
 
+    /// The connectivity state of the transport.
+    public var connectivityState: AsyncStream<ConnectivityState> {
+      self.channel.connectivityState
+    }
+
     /// Creates a new NIOTransportServices-based HTTP/2 client transport.
     ///
     /// - Parameters:
