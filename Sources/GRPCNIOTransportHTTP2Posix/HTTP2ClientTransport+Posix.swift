@@ -110,6 +110,11 @@ extension HTTP2ClientTransport {
       self.channel.retryThrottle
     }
 
+    /// The connectivity state of the transport.
+    public var connectivityState: AsyncStream<ConnectivityState> {
+      self.channel.connectivityState
+    }
+
     /// Connects to the resolved target and waits for the connection to become ready.
     public func connect() async throws {
       await self.channel.connect()
